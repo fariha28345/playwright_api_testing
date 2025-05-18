@@ -1,0 +1,21 @@
+{
+  "patientBasicInfo": {
+    "gender": "Female",
+    "name": "Playwright Tester",
+    "phoneNumber": "01887766554",
+    "occupationId": 314,
+    "dateOfBirth": "01/02/2000",
+    "bloodGroup": "A-",
+    "demography": "SEMI_URBAN",
+    "email": "playwright_user@gmail.com",
+    "fatherName": "Playwright Playwright",
+    "motherName": "Mrs Playwright",
+    "spouseName": "Unknown",
+    "doctorGivenPatientId": ""
+  },
+  "latestVitalSign": {},
+  "emergencyContactList": [],
+  "presentAddress": {
+    "address": "Dhaka, Bangladesh"
+  }
+}

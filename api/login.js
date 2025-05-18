@@ -3,10 +3,12 @@ const reData = require('../utils/reusable_data.js');
 const loginData = require('../test_data/login_cred.json')
 
 async function login() {
-    const apiContext = await request.newContext();
-    const res = await apiContext.post('https://staging3.jotno.net/auth/login', {
+    const apiContext = await request.newContext({
+        baseURL: process.env.BASE_URL1,
+    });
+    const res = await apiContext.post(`login`, {
         headers: {
-        'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
         data: loginData,
     });

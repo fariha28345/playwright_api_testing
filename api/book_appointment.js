@@ -1,14 +1,14 @@
 const { request } = require('@playwright/test');
 const reData = require('../utils/reusable_data.js');
-const { schedulePayload } = require('../dto/add_schedule.js')
+const { bookApptPayload } = require('../dto/book_appointment.js')
 
-async function addSchedule() {
-    const payload = schedulePayload();
+async function bookAppointment() {
+    const payload = bookApptPayload();
 
     const apiContext = await request.newContext({
         baseURL: process.env.BASE_URL2,
     });
-    const res = await apiContext.post(`appointment-config/org/${reData.orgId}/doctors/${reData.docId}/schedules`, {
+    const res = await apiContext.post(`appointments`, {
         headers: {
             'Content-Type': 'application/json',
             'authId': reData.authId,
@@ -16,9 +16,8 @@ async function addSchedule() {
         data: payload,
     });
     const json = await res.json();
-    reData.scheduleId = json.data.id;
-    //process.env.SCHEDULE_ID = json.data.id;
-    return res;
+    reData.appointmentId = json.data.id;
+    return res;  
 }
 
-module.exports = addSchedule;
+module.exports = bookAppointment;
